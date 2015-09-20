@@ -150,10 +150,10 @@ class Asteroida {
   }
   void move() {
     PVector statek = new PVector(mouseX,height-50);
-    PVector dir = PVector.sub(statek,location);  // Find vector pointing towards mouse
-    dir.normalize();     // Normalize
-    dir.mult(1);       // Scale 
-    acceleration = dir;  // Set to acceleration
+    PVector dir = PVector.sub(statek,location);
+    dir.normalize();
+    dir.mult(1);
+    acceleration = dir;
     velocity.add(acceleration);
     velocity.limit(topspeed);
     location.add(velocity);
