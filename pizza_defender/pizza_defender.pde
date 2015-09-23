@@ -15,8 +15,6 @@ float polozx;
 int score = 0;
 int tempscore = 0;
 int level = 1;
-float xspeed = 1;
-float yspeed = 1;
 boolean lose=false;
 
 void setup() {
@@ -83,6 +81,9 @@ void moveAst () {
 void movePoc () {
   for(int j = 0; j < pociski.size(); j++) {
       Pocisk poc = (Pocisk)pociski.get(j);
+      if (poc.y<0) {
+        pociski.remove(j);
+      }
       poc.y=poc.y-5;
       poc.display();
       poc=null;
@@ -132,6 +133,7 @@ void update () {
     }
   }
 }
+
 class Asteroida {
   
   PVector location;
